@@ -22,6 +22,7 @@
 
     <%
         String image = "";
+        String path = "C:/apache-tomcat-8.5.40/webapps/School-Management-System/styles/pics";
         MultipartRequest req = new MultipartRequest(request,path);
         Enumeration fname = req.getFileNames();
         
