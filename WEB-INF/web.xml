@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+	<servlet>
+		<servlet-name>successPage</servlet-name>
+		<servlet-class>successPage</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>successPage</servlet-name>
+		<url-pattern>/successPage</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>errorPage</servlet-name>
+		<servlet-class>errorPage</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>errorPage</servlet-name>
+		<url-pattern>/errorPage</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>fileUpload</servlet-name>
+		<servlet-class>fileUpload</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>fileUpload</servlet-name>
+		<url-pattern>/fileUpload</url-pattern>
+	</servlet-mapping>
+
+</web-app>
