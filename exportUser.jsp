@@ -16,7 +16,7 @@
             }
         %>
     <%
-        String file = "C:/apache-tomcat-8.5.40/webapps/School-Management-System/styles/Exported_Files/exportedUsers.csv";
+        String file = "F:/Study/5th-semester/Web-Engineering/apache-tomcat-8.5.40/webapps/java_project/styles/Exported_Files/exportedUsers.csv";
         try {
             FileWriter cout = new FileWriter(file);
             
