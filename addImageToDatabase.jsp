@@ -22,7 +22,6 @@
 
     <%
         String image = "";
-        String path = "F:/Study/5th-semester/Web-Engineering/apache-tomcat-8.5.40/webapps/java_project/styles/pics";
         MultipartRequest req = new MultipartRequest(request,path);
         Enumeration fname = req.getFileNames();
         

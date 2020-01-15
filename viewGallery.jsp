@@ -53,7 +53,7 @@
                     <!-- <td>
                         <a href="#"><button type="submit" class="btn btn-primary"><i
                                     class="glyphicon glyphicon-pencil"></i></button></a>-->
-                    <a href="test.jsp?id=<%=img_id%>"><button type="submit" class="btn btn-danger"><i class=" glyphicon
+                    <a href="viewGallery.jsp?id=<%=img_id%>"><button type="submit" class="btn btn-danger"><i class=" glyphicon
                             glyphicon-remove"></i></button></a>
                     </td>
                 </div>
@@ -121,3 +121,33 @@
         margin-left: 60px;
     }
 </style>
+<%
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        String url = "jdbc:mysql://127.0.0.1/java_test";
+        Connection con = DriverManager.getConnection(url, "root", "");
+        Statement st = con.createStatement();
+        String img_id = request.getParameter("id");
+        ResultSet rs = st.executeQuery("select image from gallery where id = '" + img_id + "' ");
+        if(rs.next()) {
+            if(img_id != null) {
+                Statement st1 = con.createStatement();
+                int rs1 = st1.executeUpdate("delete from gallery where id = '" + img_id + "' ");
+                String path = "C:/apache-tomcat-8.5.40/webapps/School-Management-System/styles/pics/"+rs.getString(1);
+                out.println(path);
+                File delete_img = new File(path);
+                if (rs1 > 0 && delete_img.delete()) {
+                    response.sendRedirect("viewGallery.jsp");
+                } else {
+                    response.sendRedirect("error.html");
+                }
+            }
+        }
+        rs.close();
+        st.close();
+        con.close();
+
+        } catch (Exception e) {
+            out.println(e);
+    }
+%>
